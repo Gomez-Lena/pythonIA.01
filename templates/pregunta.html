@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trivia My Little Pony</title>
+</head>
+<body>
+
+<h2>Pregunta {{ numero }} de {{ total }}</h2>
+
+<h3>{{ pregunta }}</h3>
+
+<form method="POST">
+
+    {% for opcion in opciones %}
+        <label>
+            <input type="radio" name="respuesta" value="{{ opcion }}" required>
+            {{ opcion }}
+        </label>
+        <br>
+    {% endfor %}
+
+    <br>
+    <button type="submit">Responder</button>
+</form>
+
+</body>
+</html>
