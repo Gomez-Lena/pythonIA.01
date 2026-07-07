@@ -772,3 +772,54 @@ transform:rotate(-4deg);
 }
 
 }
+/* ===========================
+   BRILLO DE LA TARJETA
+=========================== */
+
+.question-card::after{
+
+content:"";
+
+position:absolute;
+
+top:-60%;
+
+left:-25%;
+
+width:180px;
+
+height:220%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.55),
+
+transparent);
+
+transform:rotate(25deg);
+
+animation:glassLight 5s infinite;
+
+}
+
+@keyframes glassLight{
+
+0%{
+
+left:-40%;
+
+}
+
+100%{
+
+left:140%;
+
+}
+
+}
