@@ -823,3 +823,20 @@ left:140%;
 }
 
 }
+.rainbow{
+
+width:250px;
+
+height:12px;
+
+margin:0 auto 20px;
+
+border-radius:50px;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+#ff6dbd
