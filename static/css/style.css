@@ -1,110 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
 
 :root{
- --pink:#ff8fd1;
- --pink2:#ffb6e6;
- --purple:#b388ff;
- --lav:#e7d7ff;
- --sky:#bfefff;
- --mint:#d9fff4;
- --yellow:#fff3a6;
- --white:#ffffff;
- --text:#6b4aa5;
- --shadow:0 10px 25px rgba(138,92,255,.18);
- --radius:24px;
+    --pink:#ff69c7;
+    --pink2:#ffb8ea;
+    --purple:#b86cff;
+    --purple2:#d6b6ff;
+    --blue:#8fe7ff;
+    --yellow:#fff5a8;
+    --white:#ffffff;
+    --text:#7d3bb8;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Fredoka",sans-serif;
+}
+
 body{
- margin:0;
- min-height:100vh;
- font-family:Arial,sans-serif;
- color:var(--text);
- background:
- radial-gradient(circle at 20% 20%,rgba(255,255,255,.55) 0 8%,transparent 9%),
- linear-gradient(180deg,#ffd8f0,#dff7ff,#f3e5ff);
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:30px;
+
+    background:
+    radial-gradient(circle at top,#ffffff55 2%,transparent 3%),
+    linear-gradient(
+    180deg,
+    #ffb4e7,
+    #ffd8f3,
+    #d8c4ff,
+    #bfefff);
+
+    overflow-x:hidden;
 }
-body::before{
- content:"";
- position:fixed; inset:0;
- background:
- radial-gradient(circle,#fff 2px,transparent 3px) 0 0/120px 120px;
- opacity:.25; pointer-events:none;
- animation:twinkle 10s linear infinite;
+
+.background-stars{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.4;
+
+    background-image:
+    radial-gradient(white 2px,transparent 3px);
+
+    background-size:90px 90px;
+
+    animation:stars 20s linear infinite;
 }
-.container,.card{
- max-width:900px;
- margin:40px auto;
- padding:28px;
- background:rgba(255,255,255,.72);
- backdrop-filter:blur(10px);
- border:2px solid rgba(255,255,255,.6);
- border-radius:var(--radius);
- box-shadow:var(--shadow);
+
+.container{
+
+    width:100%;
+    max-width:900px;
+
 }
-h1,h2,h3{
- text-align:center;
- color:#8a5cff;
- text-shadow:0 2px 0 #fff;
+
+h1{
+
+    text-align:center;
+
+    color:white;
+
+    font-size:55px;
+
+    margin-bottom:20px;
+
+    text-shadow:
+    0 0 15px #ff79cf,
+    0 0 35px #b86cff;
 }
-button,.btn,input[type=submit]{
- background:linear-gradient(45deg,var(--pink),var(--purple));
- color:#fff;
- border:none;
- border-radius:999px;
- padding:14px 28px;
- font-weight:bold;
- cursor:pointer;
- box-shadow:var(--shadow);
- transition:.25s;
+
+.progress-text{
+
+    text-align:center;
+
+    color:white;
+
+    font-size:24px;
+
+    margin-bottom:25px;
+
 }
-button:hover,.btn:hover,input[type=submit]:hover{
- transform:translateY(-3px) scale(1.04);
- filter:brightness(1.05);
+
+.question-card{
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:40px;
+
+    padding:45px;
+
+    box-shadow:
+    0 0 40px rgba(255,105,199,.35),
+    0 20px 50px rgba(138,72,255,.25);
+
+    border:4px solid white;
 }
-input,select,textarea{
- width:100%;
- padding:12px 16px;
- border-radius:16px;
- border:2px solid #eed9ff;
- outline:none;
+
+.question-card h2{
+
+    text-align:center;
+
+    color:var(--text);
+
+    margin-bottom:35px;
+
+    font-size:34px;
+
 }
-input:focus,select:focus,textarea:focus{
- border-color:var(--purple);
- box-shadow:0 0 0 4px rgba(179,136,255,.2);
+
+.option-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:18px 25px;
+
+    margin-bottom:18px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+    90deg,
+    #ffe6f7,
+    #f6ecff);
+
+    transition:.30s;
+
+    box-shadow:0 10px 20px rgba(255,105,180,.15);
+
 }
-.progress{
- height:14px;
- border-radius:999px;
- overflow:hidden;
- background:#fff;
+
+.option-card:hover{
+
+    transform:translateY(-5px) scale(1.02);
+
+    background:linear-gradient(
+    90deg,
+    #ffb9eb,
+    #dcc0ff);
+
 }
-.progress>div{
- height:100%;
- background:linear-gradient(90deg,#ff8fd1,#ffd86f,#8fe3ff,#b388ff);
+
+.option-card input{
+
+    width:24px;
+
+    height:24px;
+
+    accent-color:#ff4fb7;
+
 }
-.correct{
- border-left:8px solid #79d66f;
- animation:pop .4s;
+
+.option-card span{
+
+    font-size:22px;
+
+    color:#7d3bb8;
+
+    font-weight:600;
+
 }
-.wrong{
- border-left:8px solid #ff7d7d;
- animation:shake .35s;
+
+button{
+
+    width:100%;
+
+    margin-top:30px;
+
+    border:none;
+
+    border-radius:50px;
+
+    padding:20px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    color:white;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+    45deg,
+    #ff4fb7,
+    #b86cff,
+    #79dfff);
+
+    background-size:300%;
+
+    animation:gradient 6s infinite;
+
+    box-shadow:
+    0 0 25px #ff9ddd,
+    0 15px 35px rgba(183,108,255,.4);
+
+    transition:.30s;
+
 }
-@keyframes pop{
- from{transform:scale(.95);opacity:.6}
- to{transform:scale(1);opacity:1}
+
+button:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:
+    0 0 45px #ffd4f3,
+    0 0 70px #b86cff;
+
 }
-@keyframes shake{
- 25%{transform:translateX(-6px)}
- 50%{transform:translateX(6px)}
- 75%{transform:translateX(-4px)}
+
+@keyframes gradient{
+
+0%{background-position:left;}
+
+50%{background-position:right;}
+
+100%{background-position:left;}
+
 }
-@keyframes twinkle{
- from{transform:translateY(0)}
- to{transform:translateY(-120px)}
+
+@keyframes stars{
+
+from{
+
+transform:translateY(0);
+
 }
-@media(max-width:768px){
- .container,.card{margin:16px;padding:18px}
- h1{font-size:1.8rem}
- button,.btn{width:100%}
+
+to{
+
+transform:translateY(-120px);
+
+}
+
+}
+
+@media(max-width:700px){
+
+h1{
+
+font-size:36px;
+
+}
+
+.question-card{
+
+padding:25px;
+
+}
+
+.option-card span{
+
+font-size:18px;
+
+}
+
+button{
+
+font-size:18px;
+
+}
+
 }
