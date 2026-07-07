@@ -24,20 +24,24 @@ body{
 
     display:flex;
     justify-content:center;
-    align-items:center;
 
-    padding:30px;
+    /* Antes estaba center */
+    align-items:flex-start;
+
+    padding:40px 20px;
 
     background:
-    radial-gradient(circle at top,#ffffff55 2%,transparent 3%),
+    radial-gradient(circle at top,#fff8ff 2%,transparent 3%),
     linear-gradient(
     180deg,
-    #ffb4e7,
-    #ffd8f3,
-    #d8c4ff,
-    #bfefff);
+    #ff8ad8 0%,
+    #ffc8ef 20%,
+    #f7d6ff 45%,
+    #c6ebff 75%,
+    #ffd8f7 100%);
 
     overflow-x:hidden;
+    overflow-y:auto;
 }
 
 .background-stars{
