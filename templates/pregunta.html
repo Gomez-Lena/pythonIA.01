@@ -33,15 +33,24 @@
 
             <label class="option-card">
 
-                <input
-                    type="radio"
-                    name="respuesta"
-                    value="{{ opcion }}"
-                    required>
+    <input
+        class="radio-hidden"
+        type="radio"
+        name="respuesta"
+        value="{{ opcion }}"
+        required>
 
-                <span>{{ opcion }}</span>
+    <div class="pony-option">
 
-            </label>
+        <div class="pony-icon">🦄</div>
+
+        <div class="pony-text">
+            {{ opcion }}
+        </div>
+
+    </div>
+
+</label>
 
             {% endfor %}
 
