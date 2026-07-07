@@ -1,32 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Trivia My Little Pony</title>
+    <title>🌈 Trivia My Little Pony</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<h2>Pregunta {{ numero }} de {{ total }}</h2>
+<div class="background-stars"></div>
 
-<h3>{{ pregunta }}</h3>
+<div class="container">
 
-<form method="POST">
+    <h1>🦄 My Little Pony Quiz 🦄</h1>
 
-    {% for opcion in opciones %}
-        <label>
-            <input type="radio" name="respuesta" value="{{ opcion }}" required>
-            {{ opcion }}
-        </label>
-        <br>
-    {% endfor %}
+    <div class="progress-text">
+        Pregunta {{ numero }} de {{ total }}
+    </div>
 
-    <br>
-    <button type="submit">Responder</button>
-</form>
+    <div class="question-card">
+
+        <h2>{{ pregunta }}</h2>
+
+        <form method="POST">
+
+            {% for opcion in opciones %}
+
+            <label class="option-card">
+
+                <input
+                    type="radio"
+                    name="respuesta"
+                    value="{{ opcion }}"
+                    required>
+
+                <span>{{ opcion }}</span>
+
+            </label>
+
+            {% endfor %}
+
+            <button type="submit">
+                ✨ Responder ✨
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
 
 </body>
 </html>
