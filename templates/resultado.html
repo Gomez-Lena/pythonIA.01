@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resultado</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🎉 Juego terminado 🎉</h1>
+
+    <h2>Puntaje: {{ puntaje }}/{{ total }}</h2>
+
+    <h3>{{ mensaje }}</h3>
+
+    <br>
+
+    <a href="/">
+        <button>🦄 Volver a jugar</button>
+    </a>
+
+</div>
+
+</body>
+</html>
