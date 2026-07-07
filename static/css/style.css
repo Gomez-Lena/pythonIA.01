@@ -276,3 +276,116 @@ font-size:18px;
 }
 
 }
+/* ========= OPCIONES MY LITTLE PONY ========= */
+
+.radio-hidden{
+    display:none;
+}
+
+.pony-option{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    width:100%;
+
+    padding:22px;
+
+    border-radius:35px;
+
+    background:linear-gradient(
+    135deg,
+    #ffe7f8,
+    #f0e6ff);
+
+    border:4px solid white;
+
+    transition:.35s;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 12px 30px rgba(255,105,180,.18);
+
+}
+
+.option-card:hover .pony-option{
+
+    transform:translateY(-5px) scale(1.02);
+
+    background:linear-gradient(
+    135deg,
+    #ffb7e8,
+    #d6b7ff);
+
+}
+
+.pony-icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:34px;
+
+    background:linear-gradient(
+    180deg,
+    #ff73cf,
+    #b86cff);
+
+    color:white;
+
+    box-shadow:
+    0 0 20px #ffb3ef;
+
+}
+
+.pony-text{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#7b39c7;
+
+}
+
+.radio-hidden:checked + .pony-option{
+
+    background:linear-gradient(
+    135deg,
+    #ff5ebd,
+    #b86cff);
+
+    transform:scale(1.03);
+
+    box-shadow:
+    0 0 35px #ffb6ef,
+    0 0 60px #b86cff;
+
+}
+
+.radio-hidden:checked + .pony-option .pony-text{
+
+    color:white;
+
+}
+
+.radio-hidden:checked + .pony-option .pony-icon{
+
+    background:white;
+
+    color:#ff55bb;
+
+}
